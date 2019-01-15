@@ -31,7 +31,7 @@ public class InternationalizationApplication {
   public ITemplateResolver thymeleafTemplateResolver() {
     final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
     resolver.setApplicationContext(this.context);
-    resolver.setPrefix("classpath:views/");
+    resolver.setPrefix("classpath:templates/");
     resolver.setSuffix(".html");
     resolver.setTemplateMode(TemplateMode.HTML);
     resolver.setCacheable(false);
