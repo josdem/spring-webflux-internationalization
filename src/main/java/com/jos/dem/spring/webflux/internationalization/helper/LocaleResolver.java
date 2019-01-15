@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.springframework.web.server.ServerWebExchange;
-import org.springframework.web.servlet.LocaleContextResolver;
+import org.springframework.web.server.i18n.LocaleContextResolver;
 import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.SimpleLocaleContext;
 
