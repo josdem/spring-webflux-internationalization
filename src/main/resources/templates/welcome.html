@@ -2,8 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>I18N Spring Webflux</title>
   </head>
   <body>
-    <p data-th-text="#{user.hello}"></p>
+    <h2 data-th-text="#{label.welcome}"></h2>
+    <p data-th-text="#{label.content}"></p>
+    <p data-th-text="#{label.changeLang}"></p>
+    <ul>
+    	<li>
+    		<a href="/welcome?lang=en" data-th-text="#{label.lang.en}"></a>
+    	</li>
+    	<li>
+    		<a href="/welcome?lang=es" data-th-text="#{label.lang.es}"></a>
+    	</li>
+    </ul>
   </body>
 </html>
