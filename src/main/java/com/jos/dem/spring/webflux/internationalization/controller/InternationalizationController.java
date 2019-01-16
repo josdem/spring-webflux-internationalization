@@ -1,9 +1,7 @@
 package com.jos.dem.spring.webflux.internationalization.handler;
 
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class InternationalizationController {
@@ -14,7 +12,7 @@ public class InternationalizationController {
   }
 
   @GetMapping("/welcome")
-  public String welcome(@RequestParam("lang") String lang) {
+  public String welcome() {
     return "welcome";
   }
 
