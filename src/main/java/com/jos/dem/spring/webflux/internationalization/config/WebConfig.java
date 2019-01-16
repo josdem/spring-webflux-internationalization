@@ -31,7 +31,7 @@ public class WebConfig implements ApplicationContextAware, WebFluxConfigurer {
   @Bean
   public MessageSource messageSource() {
     ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-    messageSource.setBasenames("languages/i18n");
+    messageSource.setBasenames("i18n/messages");
     messageSource.setDefaultEncoding("UTF-8");
     return messageSource;
   }

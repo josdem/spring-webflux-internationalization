@@ -21,4 +21,9 @@ public class LocaleResolver implements LocaleContextResolver {
     return new SimpleLocaleContext(targetLocale);
   }
 
+  @Override
+  public void setLocaleContext(ServerWebExchange exchange, LocaleContext localeContext) {
+    throw new UnsupportedOperationException("Not Supported");
+  }
+
 }
