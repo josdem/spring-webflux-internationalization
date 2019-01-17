@@ -10,13 +10,6 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.reactive.config.ViewResolverRegistry;
 
-import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ITemplateResolver;
-import org.thymeleaf.spring5.SpringWebFluxTemplateEngine;
-import org.thymeleaf.spring5.ISpringWebFluxTemplateEngine;
-import org.thymeleaf.spring5.view.reactive.ThymeleafReactiveViewResolver;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
-
 @Configuration
 @EnableWebFlux
 public class WebConfig implements ApplicationContextAware, WebFluxConfigurer {
@@ -34,37 +27,6 @@ public class WebConfig implements ApplicationContextAware, WebFluxConfigurer {
     messageSource.setBasenames("i18n/messages");
     messageSource.setDefaultEncoding("UTF-8");
     return messageSource;
-  }
-
-  @Bean
-  public ITemplateResolver thymeleafTemplateResolver() {
-    final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-    resolver.setApplicationContext(this.context);
-    resolver.setPrefix("classpath:templates/");
-    resolver.setSuffix(".html");
-    resolver.setTemplateMode(TemplateMode.HTML);
-    resolver.setCacheable(false);
-    resolver.setCheckExistence(false);
-    return resolver;
-  }
-
-  @Bean
-  public ISpringWebFluxTemplateEngine thymeleafTemplateEngine() {
-    SpringWebFluxTemplateEngine templateEngine = new SpringWebFluxTemplateEngine();
-    templateEngine.setTemplateResolver(thymeleafTemplateResolver());
-    return templateEngine;
-  }
-
-  @Bean
-  public ThymeleafReactiveViewResolver thymeleafReactiveViewResolver() {
-    ThymeleafReactiveViewResolver viewResolver = new ThymeleafReactiveViewResolver();
-    viewResolver.setTemplateEngine(thymeleafTemplateEngine());
-    return viewResolver;
-  }
-
-  @Override
-  public void configureViewResolvers(ViewResolverRegistry registry) {
-    registry.viewResolver(thymeleafReactiveViewResolver());
   }
 
 }

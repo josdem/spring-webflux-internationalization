@@ -10,6 +10,5 @@ public class InternationalizationApplication {
     SpringApplication.run(InternationalizationApplication.class, args);
   }
 
-
 }
 
