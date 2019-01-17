@@ -3,11 +3,13 @@ package com.jos.dem.spring.webflux.internationalization.helper;
 import java.util.List;
 import java.util.Locale;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.i18n.LocaleContextResolver;
 import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.SimpleLocaleContext;
 
+@Component
 public class LocaleResolver implements LocaleContextResolver {
 
   @Override
